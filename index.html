@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FM Trade International</title>
+    <link rel="icon" type="image/svg+xml" href="./images/01.png" />
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Alpine.js CDN -->
@@ -61,19 +62,19 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
-            <!-- Mobile Menu (Dropdown) -->
-            <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
-                <a href="#" @click.prevent="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
-                <a href="domestic-services.html" @click.prevent="activePage = 'features'; open = false" :class="activePage === 'features' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
-                <a href="#" @click.prevent="activePage = 'pricing'; open = false" :class="activePage === 'pricing' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
-                <a href="#" @click.prevent="activePage = 'blog'; open = false" :class="activePage === 'blog' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
-                <div class="flex space-x-4">
-                    <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+                        <!-- Mobile Menu (Dropdown) -->
+                        <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
+                            <a href="index.html" @click="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
+                            <a href="domestic-services.html" @click="activePage = 'Domestic Services'; open = false" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
+                            <a href="international-services.html" @click="activePage = 'International Services'; open = false" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
+                            <a href="contact.html" @click="activePage = 'Contact'; open = false" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
         </div>
     </nav>
 
@@ -92,8 +93,12 @@
         </div>
     </div>
 
-    <!-- Optional: Add some content to see the navbar in context -->
-    <div class="container mx-auto py-10 ">
+   <!-- About Us Section with Background -->
+   <div class="container mx-auto py-10 relative">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+    
+    <div class="relative z-10">
         <h1 class="text-3xl font-bold text-center text-orange-500">About US</h1>
         <div 
     x-data="{
@@ -167,11 +172,13 @@
     </div>
 </div>
     </div>
+</div>
 
 
-      <!-- Services Section -->
-      <section class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6">
+    <!-- Services Section with Background -->
+    <section class="bg-gray-100 py-12 relative">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+        <div class="container mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Service 1: Global Sourcing Expertise -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -231,137 +238,140 @@
 
 
         <!-- Vision, Mission, and Services Overview Section -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <!-- Add CSS for diagonal background -->
-                <style>
-                    .diagonal-bg {
-                        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-                        position: relative;
-                        overflow: hidden;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    }
-                    .diagonal-bg::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: repeating-linear-gradient(
-                            45deg,
-                            rgba(255, 255, 255, 0.1),
-                            rgba(255, 255, 255, 0.1) 10px,
-                            transparent 10px,
-                            transparent 20px
-                        );
-                    }
-                </style>
-                
-                <!-- Vision -->
-                <div class="diagonal-bg p-6 mb-8 rounded-lg flex flex-col md:flex-row items-center">
-                    <div class="mr-4 mb-4 md:mb-0">
-                        <i class="fas fa-eye text-4xl text-white bg-black p-3 rounded-full"></i>
+        <section class="py-12 bg-gray-50 relative">
+            <div>
+                <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+                <div class="container mx-auto px-6">
+                    <!-- Add CSS for diagonal background -->
+                    <style>
+                        .diagonal-bg {
+                            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        }
+                        .diagonal-bg::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: repeating-linear-gradient(
+                                45deg,
+                                rgba(255, 255, 255, 0.1),
+                                rgba(255, 255, 255, 0.1) 10px,
+                                transparent 10px,
+                                transparent 20px
+                            );
+                        }
+                    </style>
+                    
+                    <!-- Vision -->
+                    <div class="diagonal-bg p-6 mb-8 rounded-lg flex flex-col md:flex-row items-center">
+                        <div class="mr-4 mb-4 md:mb-0">
+                            <i class="fas fa-eye text-4xl text-white bg-black p-3 rounded-full"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-2">OUR VISION</h3>
+                            <p class="text-white">
+                                To become a leading force in the global Sourcing and Logistics market, being recognized for our reliability, integrity, and commitment to excellence. We aim to revolutionize how businesses connect with international suppliers and streamline their supply chain operations.
+                            </p>
+                        </div>
+                        <div class="hidden md:block ml-4">
+                            <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Global Vision" class="w-32 h-32 object-cover rounded-full border-4 border-white">
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-white mb-2">OUR VISION</h3>
-                        <p class="text-white">
-                            To become a leading force in the global Sourcing and Logistics market, being recognized for our reliability, integrity, and commitment to excellence. We aim to revolutionize how businesses connect with international suppliers and streamline their supply chain operations.
+        
+                    <!-- Mission -->
+                    <div class="diagonal-bg p-6 mb-8 rounded-lg flex flex-col md:flex-row items-center">
+                        <div class="mr-4 mb-4 md:mb-0">
+                            <i class="fas fa-bullseye text-4xl text-white bg-black p-3 rounded-full"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-2">OUR MISSION</h3>
+                            <p class="text-white">
+                                Our mission is to simplify the material sourcing process for our clients and to empower businesses to thrive in the global marketplace by delivering exceptional import & export solutions with integrity, professionalism, and reliability. We are committed to:
+                            </p>
+                            <ul class="text-white list-disc ml-6 mt-2">
+                                <li>Building long-term relationships with our clients and suppliers</li>
+                                <li>Providing cost-effective solutions without compromising quality</li>
+                                <li>Ensuring timely delivery and transparent communication</li>
+                                <li>Adapting to evolving market trends and client needs</li>
+                            </ul>
+                        </div>
+                        <div class="hidden md:block ml-4">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Our Mission" class="w-32 h-32 object-cover rounded-full border-4 border-white">
+                        </div>
+                    </div>
+        
+                    <!-- Services Overview -->
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-orange-500">OUR SERVICES</h2>
+                        <p class="text-gray-600 mt-2 max-w-3xl mx-auto">
+                            We offer comprehensive sourcing and logistics solutions tailored to meet your specific business requirements.
                         </p>
                     </div>
-                    <div class="hidden md:block ml-4">
-                        <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Global Vision" class="w-32 h-32 object-cover rounded-full border-4 border-white">
-                    </div>
-                </div>
-    
-                <!-- Mission -->
-                <div class="diagonal-bg p-6 mb-8 rounded-lg flex flex-col md:flex-row items-center">
-                    <div class="mr-4 mb-4 md:mb-0">
-                        <i class="fas fa-bullseye text-4xl text-white bg-black p-3 rounded-full"></i>
-                    </div>
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold text-white mb-2">OUR MISSION</h3>
-                        <p class="text-white">
-                            Our mission is to simplify the material sourcing process for our clients and to empower businesses to thrive in the global marketplace by delivering exceptional import & export solutions with integrity, professionalism, and reliability. We are committed to:
-                        </p>
-                        <ul class="text-white list-disc ml-6 mt-2">
-                            <li>Building long-term relationships with our clients and suppliers</li>
-                            <li>Providing cost-effective solutions without compromising quality</li>
-                            <li>Ensuring timely delivery and transparent communication</li>
-                            <li>Adapting to evolving market trends and client needs</li>
-                        </ul>
-                    </div>
-                    <div class="hidden md:block ml-4">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Our Mission" class="w-32 h-32 object-cover rounded-full border-4 border-white">
-                    </div>
-                </div>
-    
-                <!-- Services Overview -->
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-orange-500">OUR SERVICES</h2>
-                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto">
-                        We offer comprehensive sourcing and logistics solutions tailored to meet your specific business requirements.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Domestic -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center mb-4">
-                            <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Domestic Services" class="w-16 h-16 object-cover rounded-full mr-4">
-                            <h3 class="text-2xl font-bold text-orange-500">DOMESTIC</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Domestic -->
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Domestic Services" class="w-16 h-16 object-cover rounded-full mr-4">
+                                <h3 class="text-2xl font-bold text-orange-500">DOMESTIC</h3>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                FM Trade International offers efficient and dependable sourcing solutions within local markets, ensuring timely deliveries and competitive pricing for businesses nationwide. From procurement to logistics, we streamline your domestic supply chain needs.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Local Procurement</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Warehouse Solutions</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Inventory Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Distribution Services</span>
+                                </div>
+                            </div>
+                            <a href="#" class="inline-block bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition-colors duration-300">Learn More</a>
                         </div>
-                        <p class="text-gray-600 mb-4">
-                            FM Trade International offers efficient and dependable sourcing solutions within local markets, ensuring timely deliveries and competitive pricing for businesses nationwide. From procurement to logistics, we streamline your domestic supply chain needs.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Local Procurement</span>
+        
+                        <!-- International -->
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center mb-4">
+                                <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="International Services" class="w-16 h-16 object-cover rounded-full mr-4">
+                                <h3 class="text-2xl font-bold text-orange-500">INTERNATIONAL</h3>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Warehouse Solutions</span>
+                            <p class="text-gray-600 mb-4">
+                                FM Trade International goes beyond borders to offer comprehensive international services. From general order supply to specialized solutions like LLC formation and physical bank setup in the USA, we provide the expertise and support to meet your global business needs seamlessly.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Global Sourcing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Import/Export</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">LLC Formation (USA)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Bank Account Setup</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Inventory Management</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Distribution Services</span>
-                            </div>
+                            <a href="#" class="inline-block bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition-colors duration-300">Learn More</a>
                         </div>
-                        <a href="#" class="inline-block bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition-colors duration-300">Learn More</a>
-                    </div>
-    
-                    <!-- International -->
-                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center mb-4">
-                            <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="International Services" class="w-16 h-16 object-cover rounded-full mr-4">
-                            <h3 class="text-2xl font-bold text-orange-500">INTERNATIONAL</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            FM Trade International goes beyond borders to offer comprehensive international services. From general order supply to specialized solutions like LLC formation and physical bank setup in the USA, we provide the expertise and support to meet your global business needs seamlessly.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Global Sourcing</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Import/Export</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">LLC Formation (USA)</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                <span class="text-gray-700">Bank Account Setup</span>
-                            </div>
-                        </div>
-                        <a href="#" class="inline-block bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-orange-600 transition-colors duration-300">Learn More</a>
                     </div>
                 </div>
             </div>

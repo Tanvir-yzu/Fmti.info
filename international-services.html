@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>domestic-services</title>
+    <title>International-services</title>
+    <link rel="icon" type="image/svg+xml" href="./images/01.png" />
 
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -33,14 +34,14 @@
 </head>
 <body>
       <!-- Navbar -->
-      <nav class="bg-white shadow-md py-4 px-16 flex items-center justify-between fixed top-0 left-0 right-0 z-50" x-data="{ activePage: 'Domestic Services' }">
-                <!-- Left: Navigation Links (Hidden on Mobile) -->
-                <div class="hidden md:flex space-x-6 flex-1 justify-start">
-                    <a href="index.html" @click="activePage = 'home'" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Home</a>
-                    <a href="domestic-services.html" @click="activePage = 'Domestic Services'" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Domestic Services</a>
-                    <a href="international-services.html" @click="activePage = 'international-services'" :class="activePage === 'international-services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">International Services</a>
-                    <a href="contact.html" @click="activePage = 'Contact'" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Contact</a>
-                </div>
+      <nav class="bg-white shadow-md py-4 px-16 flex items-center justify-between fixed top-0 left-0 right-0 z-50" x-data="{ activePage: 'International Services' }">
+        <!-- Left: Navigation Links (Hidden on Mobile) -->
+        <div class="hidden md:flex space-x-6 flex-1 justify-start">
+            <a href="index.html" @click="activePage = 'home'" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Home</a>
+            <a href="domestic-services.html" @click="activePage = 'Domestic Services'" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Domestic Services</a>
+            <a href="international-services.html" @click="activePage = 'International Services'" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">International Services</a>
+            <a href="contact.html" @click="activePage = 'Contact'" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Contact</a>
+        </div>
 
         <!-- Center: Logo -->
         <div class="text-2xl font-bold text-orange-500 flex-1 text-center">
@@ -61,21 +62,162 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
-            <!-- Mobile Menu (Dropdown) -->
-            <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
-                <a href="index.html" @click="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
-                <a href="domestic-services.html" @click="activePage = 'Domestic Services'; open = false" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
-                <a href="#" @click.prevent="activePage = 'International Services'; open = false" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
-                <a href="#" @click.prevent="activePage = 'Contact'; open = false" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
-                <div class="flex space-x-4">
-                    <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
+                        <!-- Mobile Menu (Dropdown) -->
+                        <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
+                            <a href="index.html" @click="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
+                            <a href="domestic-services.html" @click="activePage = 'Domestic Services'; open = false" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
+                            <a href="international-services.html" @click="activePage = 'International Services'; open = false" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
+                            <a href="contact.html" @click="activePage = 'Contact'; open = false" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
         </div>
     </nav>
+
+
+
+
+        <!-- International Services Section -->
+        <section class="bg-gray-900 py-16 mt-20 relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-orange-500 mb-3">INTERNATIONAL SERVICES</h2>
+                    <p class="text-gray-300 max-w-3xl mx-auto">
+                        Connecting businesses globally with our comprehensive international trade solutions
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Logistics -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Logistics" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-orange-500 mb-3">LOGISTICS</h3>
+                            <p class="text-gray-300">
+                                We provide comprehensive international logistics solutions, ensuring your goods are transported efficiently and securely across the globe. Our services include:
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Air freight services to over 200 destinations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Sea freight with competitive container rates</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Customs clearance and documentation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Warehousing and distribution solutions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <!-- Import From All Over The World -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Import From All Over The World" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-orange-500 mb-3">IMPORT FROM ALL OVER THE WORLD</h3>
+                            <p class="text-gray-300">
+                                With a robust network of global suppliers, we streamline the process of importing high-quality products from any corner of the world to meet your business needs.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Supplier verification and quality control</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Competitive pricing through established relationships</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Import compliance and regulatory guidance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Product sourcing from Asia, Europe, and Americas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <!-- US Truck Dispatch -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="US Truck Dispatch" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-orange-500 mb-3">US TRUCK DISPATCH</h3>
+                            <p class="text-gray-300">
+                                Our dedicated US truck dispatch services offer reliable coordination, helping truckers maximize productivity with optimized routes and load management.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>24/7 dispatch support for owner-operators</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Load finding and negotiation services</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Paperwork management and compliance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Route optimization and fuel savings</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <!-- LLC Formation -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="LLC Formation" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-orange-500 mb-3">LLC FORMATION</h3>
+                            <p class="text-gray-300">
+                                We simplify the process of establishing your Limited Liability Company (LLC) in the US, providing expert guidance and support to set your business on the path to success.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Complete LLC registration in all 50 US states</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>EIN (Tax ID) acquisition assistance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>US business bank account setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 mr-2"></i>
+                                    <span>Ongoing compliance and annual filing support</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     
 <!-- Footer Section -->
 <footer class="bg-gray-900 text-white pt-16 pb-8">
