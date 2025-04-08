@@ -34,12 +34,13 @@
     <!-- Navbar -->
     <nav class="bg-white shadow-md py-4 px-16 flex items-center justify-between fixed top-0 left-0 right-0 z-50" x-data="{ activePage: 'home' }">
         <!-- Left: Navigation Links (Hidden on Mobile) -->
-        <div class="hidden md:flex space-x-6 flex-1 justify-start">
-            <a href="#" @click.prevent="activePage = 'home'" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Home</a>
-            <a href="#" @click.prevent="activePage = 'Domestic Services'" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Domestic Services</a>
-            <a href="#" @click.prevent="activePage = 'International Services'" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">International Services</a>
-            <a href="#" @click.prevent="activePage = 'Contact'" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Contact</a>
-        </div>
+                <!-- Left: Navigation Links (Hidden on Mobile) -->
+                <div class="hidden md:flex space-x-6 flex-1 justify-start">
+                    <a href="index.html" @click="activePage = 'home'" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Home</a>
+                    <a href="domestic-services.html" @click="activePage = 'Domestic Services'" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Domestic Services</a>
+                    <a href="international-services.html" @click="activePage = 'international-services'" :class="activePage === 'international-services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">International Services</a>
+                    <a href="contact.html" @click="activePage = 'Contact'" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Contact</a>
+                </div>
 
         <!-- Center: Logo -->
         <div class="text-2xl font-bold text-orange-500 flex-1 text-center">
@@ -63,7 +64,7 @@
             <!-- Mobile Menu (Dropdown) -->
             <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
                 <a href="#" @click.prevent="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
-                <a href="#" @click.prevent="activePage = 'features'; open = false" :class="activePage === 'features' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
+                <a href="domestic-services.html" @click.prevent="activePage = 'features'; open = false" :class="activePage === 'features' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
                 <a href="#" @click.prevent="activePage = 'pricing'; open = false" :class="activePage === 'pricing' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
                 <a href="#" @click.prevent="activePage = 'blog'; open = false" :class="activePage === 'blog' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
                 <div class="flex space-x-4">

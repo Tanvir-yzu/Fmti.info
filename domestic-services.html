@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domestic-services</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom style for the logo to match the cursive font */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #f97316; /* Tailwind's orange-500 */
+        }
+        
+        /* Active link style */
+        .nav-link.active {
+            color: #f97316; /* Orange color */
+            font-weight: 500;
+            border-bottom: 2px solid #f97316;
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+      <!-- Navbar -->
+      <nav class="bg-white shadow-md py-4 px-16 flex items-center justify-between fixed top-0 left-0 right-0 z-50" x-data="{ activePage: 'Domestic Services' }">
+        <!-- Left: Navigation Links (Hidden on Mobile) -->
+                <!-- Left: Navigation Links (Hidden on Mobile) -->
+                <div class="hidden md:flex space-x-6 flex-1 justify-start">
+                    <a href="index.html" @click="activePage = 'home'" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Home</a>
+                    <a href="domestic-services.html" @click="activePage = 'Domestic Services'" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Domestic Services</a>
+                    <a href="international-services.html" @click="activePage = 'international-services'" :class="activePage === 'international-services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">International Services</a>
+                    <a href="contact.html" @click="activePage = 'Contact'" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500 pb-1 hover:border-b-2 hover:border-orange-500'">Contact</a>
+                </div>
+
+        <!-- Center: Logo -->
+        <div class="text-2xl font-bold text-orange-500 flex-1 text-center">
+            <a href="index.html" class="logo">FM Trade International</a>
+        </div>
+
+        <!-- Right: Social Icons (Hidden on Mobile) -->
+        <div class="hidden md:flex space-x-4 flex-1 justify-end">
+            <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
+        </div>
+
+        <!-- Hamburger Menu (Visible on Mobile) -->
+        <div class="md:hidden" x-data="{ open: false }">
+            <button @click="open = !open" class="text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Mobile Menu (Dropdown) -->
+            <div x-show="open" @click.away="open = false" class="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-center space-y-4 py-4">
+                <a href="index.html" @click="activePage = 'home'; open = false" :class="activePage === 'home' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Home</a>
+                <a href="domestic-services.html" @click="activePage = 'Domestic Services'; open = false" :class="activePage === 'Domestic Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Domestic Services</a>
+                <a href="#" @click.prevent="activePage = 'International Services'; open = false" :class="activePage === 'International Services' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">International Services</a>
+                <a href="#" @click.prevent="activePage = 'Contact'; open = false" :class="activePage === 'Contact' ? 'nav-link active' : 'text-gray-600 hover:text-orange-500'">Contact</a>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/fmti.info" class="text-gray-600 hover:text-orange-500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+        <!-- Additional Services Section -->
+        <section class="wave-bg py-12 mt-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-orange-500">OUR DOMESTIC SERVICES</h2>
+                    <p class="text-gray-600 mt-2 max-w-3xl mx-auto">
+                        Comprehensive solutions tailored to meet your local business needs
+                    </p>
+                </div>
+                <div class="space-y-8">
+                    <!-- Social Media Marketing -->
+                    <div class="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="mr-6 mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Social Media Marketing Icon" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-500 mb-2">SOCIAL MEDIA MARKETING:</h3>
+                            <p class="text-gray-600">
+                                We craft tailored strategies to elevate your brand's online presence, engage your audience, and drive measurable results across popular social media platforms.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Import & Export -->
+                    <div class="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="mr-6 mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Import & Export Icon" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-500 mb-2">IMPORT & EXPORT:</h3>
+                            <p class="text-gray-600">
+                                Our expertise in global trade ensures seamless import and export solutions, connecting you to international markets with efficiency and compliance.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Product Sourcing -->
+                    <div class="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="mr-6 mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Product Sourcing Icon" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-500 mb-2">PRODUCT SOURCING:</h3>
+                            <p class="text-gray-600">
+                                We help you identify and procure high-quality products from trusted suppliers, ensuring cost-effectiveness and reliability for your business needs.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Sales and Purchase of Goods -->
+                    <div class="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="mr-6 mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sales and Purchase Icon" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-500 mb-2">SALES AND PURCHASE OF GOODS:</h3>
+                            <p class="text-gray-600">
+                                Our dedicated team facilitates smooth transactions, providing comprehensive support for buying and selling goods in domestic and international markets.
+                            </p>
+                        </div>
+                    </div>
+    
+                    <!-- Logistics & Shipping -->
+                    <div class="flex flex-col md:flex-row items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="mr-6 mb-4 md:mb-0">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Logistics & Shipping Icon" class="w-24 h-24 rounded-full object-cover border-4 border-orange-500">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-500 mb-2">LOGISTICS & SHIPPING:</h3>
+                            <p class="text-gray-600">
+                                From secure packaging to timely delivery, we offer end-to-end logistics and shipping services to streamline your supply chain operations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- Footer Section -->
+     <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <!-- Footer Top Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-orange-500 mb-4">FM Trade International</h3>
+                    <p class="text-gray-400 mb-4">Your trusted partner for global sourcing and logistics solutions. We connect businesses with quality suppliers worldwide.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/fmti.info" class="text-gray-400 hover:text-orange-500 transition-colors duration-300" target="_blank">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Domestic Sourcing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">International Sourcing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">LLC Formation (USA)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Bank Account Setup</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Logistics Solutions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Business Avenue, Dubai, UAE</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-orange-500 mr-3"></i>
+                            <span class="text-gray-400">+971 50 123 4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-orange-500 mr-3"></i>
+                            <span class="text-gray-400">info@fmtradeinternational.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-orange-500 mr-3"></i>
+                            <span class="text-gray-400">Mon-Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="bg-gray-800 p-6 rounded-lg mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <h4 class="text-xl font-bold text-white mb-2">Subscribe to Our Newsletter</h4>
+                        <p class="text-gray-400">Stay updated with our latest news and offers</p>
+                    </div>
+                    <div>
+                        <form class="flex flex-col sm:flex-row gap-2">
+                            <input type="email" placeholder="Your Email" class="px-4 py-2 rounded-md flex-grow focus:outline-none focus:ring-2 focus:ring-orange-500">
+                            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 mb-8"></div>
+
+            <!-- Footer Bottom -->
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 FM Trade International. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition-colors duration-300">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
